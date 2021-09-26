@@ -53,7 +53,9 @@ class App extends React.Component {
 		if (query) { //to make sure it's not empty or 403
 
 			let searchResult = await BooksAPI.search(query)
-			if (searchResult.length > 0) {
+			
+			if ( searchResult.length > 0 ) {
+				console.log(searchResult.length)
 				// Loop to get the fetched books
 				searchResult = searchResult.map(result => {
 					// And another loop to replace the book with custumized one if exists
@@ -69,6 +71,8 @@ class App extends React.Component {
 				// set Results in a state to play on them locally
 				this.setState({ searchResult })
 
+			} else {
+				this.setState({ searchResult: [] })
 			}
 		} else {
 			this.setState({ searchResult: [] })

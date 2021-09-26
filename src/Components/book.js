@@ -30,7 +30,7 @@ export default function Book(props) {
                         <div className="book-title"> {currentBook.title} </div>
                         <div className="book-authors">
                         {
-                            currentBook.author ? currentBook.authors.map( author  => <address>{author}</address> ) : 'unknown authors'
+                            currentBook.authors ? currentBook.authors.map( author  => <address>{author}</address> ) : 'unknown authors'
                         }
                         </div>
                     </div>
